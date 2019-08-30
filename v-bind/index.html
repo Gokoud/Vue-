@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Vue.js_learning</title>
+</head>
+<body>
+    <div id="app">
+        <button v-on="{mouseenter: onEnter, mouseleave: onOut}">点我</button>
+        <form v-on:submit="onSubmit($event)">
+            <button type="submit">提交</button>
+
+        </form>
+    </div>
+    <script src="vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
