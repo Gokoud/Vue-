@@ -7,8 +7,26 @@
 </head>
 <body>
     <div id="app">
-        <input type="text" v-model="name">
-        {{name}}
+<!--        <label >-->
+<!--            男-->
+<!--            <input v-model="sex" value="male" type="checkbox">-->
+<!--        </label>-->
+<!--        <label >-->
+<!--            女-->
+<!--            <input v-model="sex" value="female" type="checkbox">-->
+<!--        </label>-->
+<!--        <textarea v-model="article" id="" cols="30" rows="10">-->
+<!--        </textarea>-->
+        <select v-model="from">
+            <option value="1">广州</option>
+            <option value="2">深圳</option>
+        </select>
+        {{from}}
+        <div>你要去哪里？</div>
+        <select v-model="dest" multiple>
+            <option value="1">广州</option>
+            <option value="2">深圳</option>
+        </select>
     </div>
     <script src="vue.js"></script>
     <script src="main.js"></script>

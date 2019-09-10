@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Vue.js_learning</title>
+    <style>
+        .active {
+            background: #a10;
+        }
+    </style>
+</head>
+<body>
+<ul id="example-1">
+    <li v-for="item in items">
+        {{ item.message }}
+    </li>
+</ul>
+
+<ul id="example-2">
+    <li v-for="(item, index) of items">
+        {{ parentMessage }} - {{ index }} - {{ item.message }}
+    </li>
+</ul>
+
+<!--<ul id="v-for-object" class="demo">-->
+<!--    <div v-for="(value,name) in object">-->
+<!--        {{name}}: {{value}}-->
+<!--    </div>-->
+<!--</ul>-->
+
+<ul id="v-for-object" class="demo">
+    <div v-for="(value,name,index) in object">
+        {{index}}.{{name}}:{{value}}
+    </div>
+</ul>
+
+<script src="vue.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

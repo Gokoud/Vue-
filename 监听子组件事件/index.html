@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Vue.js_learning</title>
+</head>
+<body>
+<div id="blog-posts-events-demo">
+    <div :style="{ fontSize: postFontSize + 'em' }">
+        <blog-post
+                v-for="post in posts"
+                v-bind:key="post.id"
+                v-bind:post="post"
+                v-on:enlarge-text="postFontSize += $event"
+        ></blog-post>
+    </div>
+
+</div>
+    <script src="vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

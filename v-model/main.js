@@ -1,6 +1,9 @@
 var app = new Vue({
     el:'#app',
     data:{
-        name: 'mausen'
+        // sex:['male']
+        // article:'Lorem'
+        from: 1,
+        dest: [],
     }
 });

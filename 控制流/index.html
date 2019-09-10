@@ -12,15 +12,9 @@
 </head>
 <body>
     <div id="app">
-        <div v-if="role == 'admin' || role == 'super_admin'">
-            管理员你好
-        </div>
-        <div v-else-if="role == 'hr'">
-            待查看简历列表：…
-        </div>
-        <div v-else>
-            你没有权限访问此页面
-        </div>
+        <a  :class="{active: isActive}" :href="url">
+            点这里
+        </a>
     </div>
     <script src="vue.js"></script>
     <script src="main.js"></script>

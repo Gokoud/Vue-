@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Vue.js_learning</title>
+    <style>
+        .active {
+            background: #a10;
+        }
+    </style>
+</head>
+<body>
+<!--传给v-bind:class一个对象，得以动态地切换class-->
+<!--<div v-bind:class="{ active:isActive }"></div>-->
+<!--&lt;!&ndash;上面的语法表示active这个class存在与否将取决于数据属性isActive的truthiness&ndash;&gt;-->
+<!--<div class="static"-->
+<!--    v-bind:class="{ active: isActive, 'text-danger':hasError }"-->
+<!--&gt;-->
+<!--</div>-->
+<!--数组语法-->
+<div id="app">
+<!--    <div v-bind:style=" {color:activeColor, fontSize + 'px'} "></div>-->
+    <div v-bind:style="styleObject"></div>
+</div>
+</body>
+</html>

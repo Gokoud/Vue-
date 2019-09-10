@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Vue.js_learning</title>
+    <style>
+        .active {
+            background: #a10;
+        }
+    </style>
+</head>
+<body>
+<div id="example-5">
+    <select v-model="selected">
+        <option disabled value="">请选择</option>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+    </select>
+    <span>Selected: {{ selected }}</span>
+</div>
+<!--多选框-->
+<div id="example-6">
+    <select v-model="selected" multiple style="width:50px" >
+        <option >A</option>
+        <option >B</option>
+        <option >C</option>
+    </select>
+    <br>
+    <span>Selected: {{selected}}</span>
+</div>
+<!--用v-for渲染的动态选项-->
+<div id="example-7">
+    <select v-model="selected">
+        <option v-for="option in options" v-bind:value="option.value">
+            {{option.text}}
+        </option>
+    </select>
+    <span> Selected: {{selected}}</span>
+</div>
+    <script src="vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

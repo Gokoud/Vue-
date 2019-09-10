@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="" xmlns="" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Vue.js_learning</title>
+    <style>
+        .liked {
+            background: deeppink;
+        }
+    </style>
+</head>
+<body>
+<!--阻止单击事件继续传播-->
+<a v-on:click.stop="doThis"></a>
+
+<!--提交事件不再重载页面-->
+<form v-on:submit.prevent="onSubmit"></form>
+
+<!--修饰符可以串联-->
+<a v-on:click.stop.prevent="doThat"></a>
+
+<!--只有修饰符-->
+<form v-on:submit.prevent></form>
+
+<!-- 添加事件监听器时使用事件捕获模式 -->
+<!-- 即元素自身触发的事件先在此处理，然后才交由内部元素进行处理 -->
+<div v-on:click.capture="doThis">...</div>
+
+<!--只当在event.target是当前元素自身时触发处理函数-->
+<!--即事件不是从内部元素触发的-->
+<div v-on:click.self="doThat">...</div>
+
+<!--点击事件只触发一次-->
+<a v-on:click.once="doThis"></a>
+
+<!-- 滚动事件的默认行为 (即滚动行为) 将会立即触发 -->
+<!-- 而不会等待 `onScroll` 完成  -->
+<!-- 这其中包含 `event.preventDefault()` 的情况 -->
+<div v-on:scroll.passive="onScroll">..</div>
+
+<!--只有在‘key’是'Enter'时调用vm.submit()-->
+<input v-on:keyup.enter="submit" />
+
+<!--使用keyCode特性也是允许的-->
+<input v-on:keyup.13="submit"/>
+
+<!--即是Alt 或 Shift被一同按下时也会触发-->
+<button @click.ctrl="onClick">A</button>
+<!--有且只有Ctrl被按下的时候才会触发-->
+<button @click.ctrl.exact="onCtrlClick">A</button>
+<!--没有任何系统修饰符被按下的时候才会触发-->
+<button @click.exact="onClick">A</button>
+
+<div id="app">
+<!--    <input v-model="message" placeholder="edit me">-->
+<!--    <p>Message is : {{message}}</p>-->
+    <span>Multiline message is :</span>
+    <p style="white-space: pre-line;">{{message}}</p>
+    <br>
+    <textarea v-model="message" placeholder="add multiple"></textarea>
+</div>
+</body>
+<script src="vue.js"></script>
+<script src="main.js"></script>
+</html>
